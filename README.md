@@ -1,4 +1,4 @@
-## CryptoCoins Desklet for Windows
+## Crypto Coins Desklet for Windows
 
 Windows Desklet (Widget or Gadget or Skin) that displays the current price of more than **1500+ coins** and their daily percent changes.
 
@@ -19,8 +19,8 @@ Windows Desklet (Widget or Gadget or Skin) that displays the current price of mo
 
 **To use the Desklet first you need to install it, steps are below:**
 
-1. Download the latest release version file `(.rmskin)` from https://github.com/pbojan/cryptocoins-desklet-windows/releases
-2. Double-click the `.rmskin` file and then click Install.
+1. Download the latest release version file **`.rmskin`** from https://github.com/pbojan/cryptocoins-desklet-windows/releases
+2. Double-click the **`.rmskin`** file and then click Install.
 
 *NOTE: For more about installing skins check out: https://docs.rainmeter.net/manual/installing-skins/*
 
@@ -29,29 +29,29 @@ Windows Desklet (Widget or Gadget or Skin) that displays the current price of mo
 **To add the Desklet to your desktop, please follow the steps below:**
 
 1. Make sure you have Rainmeter running
-2. Right-click on the Rainmeter icon in the tray and select `Manage`
-3. Find the file `pbojan -> CryptoCoins -> Bitcoin -> Bitcoin.ini`
-4. Select it and click `Load` in the top-right corner and this will load the desklet on your desktop
-5. You can load multiple desklets by finding the `.ini` file and clicking `Load`
+2. Right-click on the Rainmeter icon in the tray and select **`Manage`**
+3. Find the file **`pbojan -> CryptoCoins -> Bitcoin -> Bitcoin.ini`**
+4. Select it and click **`Load`** in the top-right corner and this will load the desklet on your desktop
+5. You can load multiple desklets by finding the **`.ini`** file and clicking **`Load`**
 6. Now you can move the desklet to your desired location on the desktop!
 
-*NOTE: This Dekslet comes with few different crypto coins configured out of the box but it is really easy to configure any crypto coin available on coinmarketcap.com! Check out the next section to find out how.*
+*NOTE: This Dekslet comes with few different crypto-coins configured out of the box but it is really easy to configure any crypto-coin available on http://coinmarketcap.com! Check out the next section to find out how.*
 
 #### Adding New Coin Desklet
 
-**To add new crypto coin as a Desklet, please follow the steps below:**
+**To add new crypto-coin as a Desklet, please follow the steps below:**
 
 1. Open the Rainmeter skins directory, usually **`C:\Users\#YourName#\Documents\Rainmeter\Skins\pbojan\CryptoCoins`**
-2. Copy the **`Bitcoin`** folder and name it the as crypto coin you want to add e.g. **`Dash`**
+2. Copy the **`Bitcoin`** folder and name it the as crypto-coin you want to add e.g. **`Dash`**
 3. Go into the folder and rename the **`Bitcoin.ini`** file to **`Dash.ini`**, now you should have **`C:\Users\#YourName#\Documents\Rainmeter\Skins\pbojan\CryptoCoins\Dash\Dash.ini`**
 4. Open the file with any editor and change:
     - Change the **`CoinID`** to the **ID** of the crypto-coin you want to add e.g. **`CoinID=131`** for Dash, find your **`CoinID`** here: https://api.coinmarketcap.com/v2/listings/
     - Change the **`CoinSymbol`** to the **Symbol** of the crypto-coin you want to add e.g. **`CoinSymbol=dash`**, you can find the **`CoinSymbol`** on the same page as the **`CoinID`**  (make sure it is lower case)
 5. Save the changes, now you can add your coin desklet from the `Manage` window, check the Usage section for more details
 
-*NOTE: This Dekslet comes with more than 300+ coin icons out of the box but in the case when the coin icon is not displayed for your coin that means you need to add the icon:*
+*NOTE: This Dekslet comes with more than 300+ crypto-coins icons out of the box but in the case when the coin icon is not displayed for your coin that means you need to add the icon:*
 
-- Download an icon for you crypto coin and move it to **`C:\Users\#YourName#\Documents\Rainmeter\Skins\pbojan\@Resources\icons\`**
+- Download an icon for you crypto-coin and move it to **`C:\Users\#YourName#\Documents\Rainmeter\Skins\pbojan\@Resources\icons\`**
 - Make sure the icon is named the same as the **`CoinSymbol`** e.g. **`dash.png`**
 - For best results make sure the icon has the same **aspect ration for width/height** and is at **least 50x50 pixels big**
 
