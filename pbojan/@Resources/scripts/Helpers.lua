@@ -20,5 +20,19 @@ function Round(num)
 	else
 		return math.ceil(num * mult - 0.5) / mult
 	end
+end
 
+function CheckVersion(current, latest)
+    local MeasureVersion = SKIN:GetMeasure('MeasureVersion')
+    
+    current = tonumber(SKIN:GetVariable('Version'))
+    latest = tonumber(MeasureVersion:GetStringValue())
+    
+    local MeterDonateIcon = SKIN:GetMeter('MeterDonateIcon')
+    local MeterUpgradeIcon = SKIN:GetMeter('MeterUpgradeIcon')
+    if latest > current then
+        MeterUpgradeIcon:Show()
+    else
+        MeterDonateIcon:Show()
+    end
 end

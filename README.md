@@ -11,7 +11,7 @@ Windows Desklet (Widget or Gadget or Skin) that displays the current price of mo
 **To be able to use this Desklet first you will need to have the necessary requirements:**
 
 * **Rainmeter v4.1+** - for how to install check out: https://docs.rainmeter.net/manual/installing-rainmeter/
-* **Windows 10** - not a hard requirement but some features may not work properly if you are using old Windows version
+* **Windows 7/8/10** - rainmeter can be installed only on windows
 
 *NOTE: Rainmeter is a completely safe, free and open-source application for Windows PCs. It is a platform that enables skins to run on your desktop. For more information check out: https://docs.rainmeter.net/manual/getting-started/*
     
