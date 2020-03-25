@@ -1,5 +1,5 @@
 function Initialize()
-    
+   
 end
 
 function Round(num)
@@ -22,6 +22,21 @@ function Round(num)
 	end
 end
 
+function RoundPercent(num)
+    if num == '' then
+        return num
+    end
+    
+    num = tonumber(num)
+        
+	local mult = 10 ^ (2 or 0)
+	if num >= 0 then
+		return math.floor(num * mult + 0.5) / mult
+	else
+		return math.ceil(num * mult - 0.5) / mult
+	end
+end
+
 function CheckVersion(current, latest)
     local MeasureVersion = SKIN:GetMeasure('MeasureVersion')
     
@@ -35,4 +50,41 @@ function CheckVersion(current, latest)
     else
         MeterDonateIcon:Show()
     end
+end
+
+function OnRequestParsed()
+	local MeasureCoinLastUpdated = SKIN:GetMeasure('MeasureCoinLastUpdated')
+	local date = MeasureCoinLastUpdated:GetStringValue()
+	
+	-- Set formatted date
+	SKIN:Bang('!SetOption', 'MeasureCoinLastUpdatedFormatted', 'String', FormatDate(date))
+	
+	-- Round numbers
+	local MeasureCoinPrice = SKIN:GetMeasure('MeasureCoinPrice')
+	SKIN:Bang('!SetOption', 'MeasureCoinPriceRounded', 'String', Round(MeasureCoinPrice:GetStringValue()))
+	
+	local MeasureCoinChange1H = SKIN:GetMeasure('MeasureCoinChange1H')
+	SKIN:Bang('!SetOption', 'MeasureCoinChange1HRounded', 'String', RoundPercent(MeasureCoinChange1H:GetStringValue()))
+	
+	local MeasureCoinChange1D = SKIN:GetMeasure('MeasureCoinChange1D')
+	SKIN:Bang('!SetOption', 'MeasureCoinChange1DRounded', 'String', RoundPercent(MeasureCoinChange1D:GetStringValue()))
+	
+	local MeasureCoinChange7D = SKIN:GetMeasure('MeasureCoinChange7D')
+	SKIN:Bang('!SetOption', 'MeasureCoinChange7DRounded', 'String', RoundPercent(MeasureCoinChange7D:GetStringValue()))
+end
+
+function GetTimezoneDiff()
+	localTime = os.time(os.date('*t'))
+	utcTime = os.time(os.date('!*t'))
+	
+	return utcTime - localTime
+end
+  
+
+function FormatDate(date)
+	local pattern = "(%d+)-(%d+)-(%d+)T(%d+):(%d+):(%d+)"
+	local runyear, runmonth, runday, runhour, runminute, runseconds = date:match(pattern)
+	local timestamp = os.time({year = runyear, month = runmonth, day = runday, hour = runhour, min = runminute, sec = runseconds}) - GetTimezoneDiff()
+	
+	return os.date('%c', timestamp)
 end
