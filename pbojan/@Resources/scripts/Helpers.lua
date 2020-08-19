@@ -1,5 +1,18 @@
 function Initialize()
-   
+	coinID = tonumber(SKIN:GetVariable('CoinID'))
+	coinSymbol = SKIN:GetVariable('CoinSymbol')
+	currency = SKIN:GetVariable('Currency')
+	url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?convert=' .. currency
+	
+	-- If coin ID set use coin ID to fetch data instead of the SYMBOL
+	if not coinID then
+		url = url .. '&symbol=' .. coinSymbol
+	else
+		url = url .. '&id=' .. coinID
+	end
+	
+	SKIN:Bang('!SetOption', 'MeasureCoinData', 'URL', url)
+	SKIN:Bang('!CommandMeasure', 'MeasureCoinData', 'Update')
 end
 
 function Round(num)

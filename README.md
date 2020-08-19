@@ -1,6 +1,6 @@
 ## Crypto Coins Skin/Desklet for Windows
 
-Windows Desklet (Widget or Gadget or Skin) that displays the current price of more than **1500+ coins** and their daily percent changes.
+Windows Desklet, Widget, Gadget, Rainmeter Skin that displays the current price of more than **1500+ coins** and their daily percent changes.
 
 ![Desklet screenshot](screenshot.png)
 
@@ -50,6 +50,8 @@ Windows Desklet (Widget or Gadget or Skin) that displays the current price of mo
 4. Open the file with any editor and change:
 	- Change the **`ApiKey`** to the API key you got from your CoinMarketCap account
     - Change the **`CoinSymbol`** to the **Symbol** of the crypto-coin you want to add e.g. **`CoinSymbol=DASH`** (make sure it is in upper case)
+		- In some rare cases where some currencies have the same symbol e.g. BTCV you can also use **`CoinID=5175`** to specify exactly which currency to show. 
+		- You can find the **`CoinID`** by going on the tools section for your coin e.g. `https://coinmarketcap.com/currencies/bitcoin-vault/tools/` and in the Website Widget section find the following field **`data-currencyid`** in this case **`data-currencyid="5175"`** 
     - Change the **`Currency`** to the desired **Currency** you want to see the price as e.g. **`Currency=USD`** (make sure it is in upper case). You can find all supported currencies on this page: https://coinmarketcap.com/api/documentation/v1/#section/Standards-and-Conventions
 5. Save the changes, now you can add your coin desklet from the `Manage` window, check the Usage section for more details
 
